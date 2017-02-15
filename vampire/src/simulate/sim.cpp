@@ -332,7 +332,7 @@ int run(){
 		case 9:
 			if(vmpi::my_rank==0){
 				std::cout << "Hybrid-CMC..." << std::endl;
-                zlog << "Hybrid-CMC.::cout << "program::two_temperature.." << std::endl;
+                zlog << "Hybrid-CMC..."<<std::cout << "program::two_temperature.." << std::endl;
 			}
 			program::hybrid_cmc();
 			break;

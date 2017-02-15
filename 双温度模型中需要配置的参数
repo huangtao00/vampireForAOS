@@ -51,6 +51,7 @@ sim:laser-pulse-power=28e20  # equal to IF I=7e18 ; F is fluence 400
 sim:equilibration-time-steps=20000
 sim:loop-time-steps=30000  # 3 ps
 sim:time-step=1.0E-16     #dt 
+sim:partial-time-steps=100  #  这个是输出结果单隔的steps
 
 sim:applied-field-strength= 0
 sim:applied-field-unit-vector=0,0.235,0.9  #almost z direction
@@ -84,6 +85,30 @@ sim:applied-field-unit-vector=0,0.235,0.9  #almost z direction
 Tue Feb 14 17:33:04 CST 2017
 
 =====================================================================================
+使用6nm大小的柱状颗粒
+
+0外磁场时，double temperature model跑一次，观察磁化变化情况，材料去磁
+
+
+外场 25Tesla时，材料磁性不变
+
+
+加入double temperaure model的已经完成，测试的几个demo的结果也是与想像的一致的：
+1：没有加入外磁场时，
+激光功率比较小时，材料coercivity足够大，材料不会去磁
+激光功率增大时， 材料coercivity不足以 抵抗热扰动，导致材料去磁
+
+2：加入外磁场时：
+外磁场一定时：当激光功率比较小时，不足以去磁，逐渐增加激光的功率，材料最终去磁
+
+激光功率一定时（比较大）：当外磁场比较小时，材料去磁，逐渐增加外磁场的大小，材料最终不去磁
+
+
+=====================================================================================
+下面开始考虑如何加入IFE field,这个场的大小和时间起止要可调
+当调节IFE field时，可以把input文件中激光的laser-pulse-power设置为0
+
+
 
 
 

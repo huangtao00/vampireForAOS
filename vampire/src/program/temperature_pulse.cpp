@@ -257,7 +257,7 @@ void temperature_pulse(){
 
                     // Calculate temperature
                     sim::temperature=temperature_pulse_function(time_from_start);  //calculate material temperature
-
+//                    std::cout<<"temperautre"<<sim::temperature<<std::endl;
                     // Integrate system
                     sim::integrate(1);   // calculate spin dynamics
 
