@@ -108,6 +108,17 @@ Tue Feb 14 17:33:04 CST 2017
 下面开始考虑如何加入IFE field,这个场的大小和时间起止要可调
 当调节IFE field时，可以把input文件中激光的laser-pulse-power设置为0
 
+怎么加入一个时变场，
+IFE field就是一个时变的外场，所以直接在外场中添加就行了，但是这个外场的时间和激光加入的起始时间存在
+关系，所以这一点面要去处理
+
+办法就是对外场进行改造，考虑这两个因素的时候，恒定外磁场应试是不存在的，所以需要考虑怎么变化
+只能在fields.cpp 151行这个函数下手 	
+if(sim::hamiltonian_simulation_flags[2]==1) calculate_applied_fields(start_index,end_index);
+
+因为这个外场只是与时间有关系，所以我们只需要得到激光作用在材料上的起止时间即可
+
+需要关心的参数：激光加入后，多久才产生IFE field
 
 
 

@@ -245,6 +245,7 @@ void temperature_pulse(){
 		
 	// record starting time after equiibration/last pulse
 	int start_time=sim::time;
+    sim::pulse_start_time=sim::time;
 
 	// Simulate temperature pulse
 	while(sim::time<sim::total_time+start_time){

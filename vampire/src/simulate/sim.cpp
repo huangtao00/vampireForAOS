@@ -121,6 +121,8 @@ namespace sim{
 	double TTG = 6.6E17 ;///electron coupling constant
 	double TTTe = 0.0; /// electron temperature
 	double TTTp = 0.0; /// phonon temperature
+    int pulse_start_time=0;
+
   
    double mc_delta_angle=0.1; /// Tuned angle for Monte Carlo trial move
    mc_algorithms mc_algorithm=hinzke_nowak;
