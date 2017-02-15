@@ -1,0 +1,78 @@
+#FePt simulation
+#------------------------------------------
+# Creation attributes:
+#------------------------------------------
+#create:crystal-structure=sc
+create:periodic-boundaries-x
+create:periodic-boundaries-y
+create:periodic-boundaries-z
+
+create:voronoi-film
+
+
+create:voronoi-rounded-grains=true #yes ,i want make the edge smooth
+create:voronoi-size-variance=0.05  #smaller the number ,smoother the edge
+create:voronoi-rounded-grains-area=1 # make  the area of grains smaller than before
+#create:voronoi-row-offset=true
+
+
+#dimensions:particle-spacing= 1 !nm
+
+
+
+#------------------------------------------
+# System Dimensions:
+#------------------------------------------
+
+dimensions:unit-cell-size = 2.866 !A
+dimensions:particle-size=10!nm
+dimensions:system-size-x = 22.0 !nm
+dimensions:system-size-y = 22.0 !nm
+dimensions:system-size-z = 10.0 !nm
+
+
+
+#------------------------------------------
+# Material Files:
+#------------------------------------------
+material:file=FePtL10.mat
+material:unit-cell-file=UC.ucf
+#------------------------------------------
+# Simulation attributes:
+#------------------------------------------
+sim:temperature=300
+
+sim:minimum-temperature=0
+sim:maximum-temperature=800
+sim:temperature-increment=10
+
+sim:time-steps-increment=1
+sim:equilibration-time-steps=1000
+sim:loop-time-steps=1000
+#sim:time-step=1.0E-16
+sim:time-step=5.0E-16
+
+
+#------------------------------------------
+# Program and integrator details
+#------------------------------------------
+sim:program=curie-temperature
+sim:integrator=llg-heun
+#------------------------------------------
+# Data output
+#------------------------------------------
+#1
+output:real-time
+#2
+output:temperature    
+#3 4 5 6
+output:magnetisation
+#7
+output:mean-magnetisation-length
+
+output:anisotropy-energy
+output:Ku
+output:mean-anisotropy-energy
+
+
+config:atoms

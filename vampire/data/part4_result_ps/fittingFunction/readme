@@ -1,0 +1,20 @@
+calcratio.py文件：
+def get_thermal_factor(opfile,row_col,atom_num,D):
+从vampiver的输出文件中，读取原始的数据，返回 热稳定因子 和 温度  数据 
+
+genttsXXX.py文件：
+调用上面函数：
+产生特定尺寸材料下，热稳定因子 与温度数据的 文件
+
+
+gptoolXXX.py文件： 
+通用的绘图程序 
+
+
+
+====================================
+
+对sigma在进行fitting,
+得到适用 于铁的sigma(T)公式 
+
+

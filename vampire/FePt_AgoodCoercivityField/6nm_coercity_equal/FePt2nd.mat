@@ -1,0 +1,27 @@
+#======================================================
+# Vampire material file for a FePt Ferrimagnet
+#======================================================
+#
+#  Huangtao 26/10/15
+#
+#---------------------------------------------------
+# Number of Materials
+#---------------------------------------------------
+material:num-materials=1
+#---------------------------------------------------
+# Material 1 Fe first layer
+#--------------------------------------------------
+material[1]:material-name=TM
+material[1]:damping-constant=0.1
+material[1]:exchange-matrix[1]=4.5e-21
+#material[1]:atomic-spin-moment=2.22 !muB 
+material[1]:atomic-spin-moment=1.66 !muB
+#choose the suitable equivelent magnetic moment
+###material[1]:atomic-spin-moment=3.2 !muB
+material[1]:uniaxial-anisotropy-constant=7.3219471534e-24
+#7.3219471534e-24  1.61e-22
+
+ 
+#material[1]:uniaxial-anisotropy-direction=0,0,1
+material[1]:material-element=Fe
+material[1]:initial-spin-direction=0,0,1

@@ -1,0 +1,9 @@
+light_source { <2*CX, 2*CY, 2*CZ> color White
+	rotate <clock*360,clock*360,CZ>
+}
+camera {
+	
+	location <CX,CY,CZ>
+	look_at <LX,LY,LZ>
+	rotate <clock*360,clock*360,CZ>
+}

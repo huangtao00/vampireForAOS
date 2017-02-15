@@ -1,0 +1,85 @@
+#FePt simulation
+#------------------------------------------
+# Creation attributes:
+#------------------------------------------
+#create:crystal-structure=sc
+create:periodic-boundaries-x
+create:periodic-boundaries-y
+create:periodic-boundaries-z
+
+create:particle
+create:cylinder
+
+
+
+
+#------------------------------------------
+# System Dimensions:
+#------------------------------------------
+
+dimensions:unit-cell-size = 2.866 !A
+
+dimensions:particle-size=  6.0 !nm
+dimensions:system-size-x = 6.0 !nm
+dimensions:system-size-y = 6.0 !nm
+dimensions:system-size-z = 6.0 !nm
+
+
+#------------------------------------------
+# Material Files:
+#------------------------------------------
+material:file=FePt2nd.mat
+material:unit-cell-file=UC2nd.ucf
+#------------------------------------------
+# Simulation attributes:
+#------------------------------------------
+
+
+
+#------------------------------------------
+# Program and integrator details
+#------------------------------------------
+sim:integrator=llg-heun
+
+#external mangetic field  configuration
+sim:applied-field-strength= 0
+sim:applied-field-unit-vector=0,0.235,0.9  #almost z direction
+
+
+sim:program=temperature-pulse       #使用激光脉冲加热材料
+sim:laser-pulse-temporal-profile= two-temperature  #使用双温度模型来加热材料
+sim:equilibration-temperature=300  #设置材料的初始温度
+sim:two-temperature-heat-sink-coupling= 0   // 1.1e12
+sim:two-temperature-electron-heat-capacity= 225
+sim:two-temperature-phonon-heat-capacity=   3.3E6  
+sim:two-temperature-electron-phonon-coupling= 18.0E17
+sim:laser-pulse-time=30.0E-14
+sim:laser-pulse-power=28E20  # equal to IF I=7e18 ; F is fluence 400
+sim:equilibration-time-steps=20000
+sim:loop-time-steps=30000  # 3 ps
+sim:time-step=1.0E-16     #dt 
+
+
+
+#------------------------------------------
+#Data output 
+#------------------------------------------
+#1
+output:real-time
+#2
+output:applied-field-strength
+#3 
+output:temperature  
+
+
+#3 4 5 6
+output:magnetisation
+output:mean-magnetisation-length
+output:applied-field-unit-vector
+
+
+#7
+#output:anisotropy-energy
+#output:Ku
+#output:mean-anisotropy-energy
+config:atoms

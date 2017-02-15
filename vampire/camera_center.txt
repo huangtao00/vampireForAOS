@@ -1,0 +1,4 @@
+#declare CX=1000.305;
+#declare CY=500.305;
+#declare CZ=200.69;
+#declare ref=0.05;

@@ -1,0 +1,43 @@
+#======================================================
+# Vampire material file for a TbCo Ferrimagnet
+#======================================================
+#
+#  Huangtao 12/26/16
+#
+#---------------------------------------------------
+# Number of Materials
+#---------------------------------------------------
+material:num-materials=2
+#---------------------------------------------------
+# Material 1 Tb 
+#--------------------------------------------------
+material[1]:material-name=Tb
+material[1]:damping-constant=0.1
+
+material[1]:exchange-matrix[1]=1.3e-21
+material[1]:exchange-matrix[2]=-0.9e-21
+
+material[1]:atomic-spin-moment=10.6 !muB
+material[1]:uniaxial-anisotropy-constant=1.7e-20
+material[1]:uniaxial-anisotropy-direction=0,0,1
+material[1]:material-element=Tb
+material[1]:initial-spin-direction=0,0,1
+material[1]:alloy-host    # the primary element of this alloy
+material[1]:alloy-fraction[2] = 0.60   #co 20%
+
+#material  2 Co
+material[2]:material-name=Co
+material[2]:damping-constant=0.1
+
+material[2]:exchange-matrix[1]=-0.9e-21
+material[2]:exchange-matrix[2]=6.064e-21
+
+material[2]:atomic-spin-moment=1.72 !muB
+material[2]:uniaxial-anisotropy-constant=6.69e-22
+material[2]:uniaxial-anisotropy-direction=0,0,1
+material[2]:material-element=Co
+material[2]:initial-spin-direction=0,0,-1
+
+material[2]:minimum-height = 0.0
+material[2]:maximum-height = 0.0
+
