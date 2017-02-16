@@ -104,6 +104,7 @@ namespace sim{
 	extern double TTG;  ///electron coupling constant
 	extern double TTTe; /// electron temperature
 	extern double TTTp; /// phonon temperature
+    extern int pulse_start_time;
 	
 	extern int system_simulation_flags;
 	extern int hamiltonian_simulation_flags[10];

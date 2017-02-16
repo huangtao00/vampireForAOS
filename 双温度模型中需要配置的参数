@@ -120,6 +120,40 @@ if(sim::hamiltonian_simulation_flags[2]==1) calculate_applied_fields(start_index
 
 需要关心的参数：激光加入后，多久才产生IFE field
 
+在equilbration阶段，激光的pulse_start_time为0
+
+这一部分才是我们需要改变的
+
+// Declare constant temporaries for global field
+// we have to change this part for inverse faraday effect field, considering sim::time variable
+const double Hx=sim::H_vec[0]*sim::H_applied;
+const double Hy=sim::H_vec[1]*sim::H_applied;
+const double Hz=sim::H_vec[2]*sim::H_applied;
+
+
+if (sim::pulse_start_time==0)
+{
+//equilibration stage  ,external field is 0 T
+}
+else
+{
+ dtime=sim::time-sim::pulse_start_time;
+ double dt=dtime*dt_SI;
+ if (dt<wait_time)
+ {
+    H==xxx
+ }
+ else if (dt>wait_time+dur_time)
+ {
+   h==yyy
+ }
+ else
+ {
+  H=const
+ }
+
+}
+
 
 
 

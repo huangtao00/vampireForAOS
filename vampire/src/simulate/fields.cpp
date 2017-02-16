@@ -558,14 +558,46 @@ int calculate_applied_fields(const int start_index,const int end_index){
 	///		Version 2.0 R F L Evans 18/11/2012
 	///
 	///==========================================================================
+    ///
+    ///
+    ///
 
 	// check calling of routine if error checking is activated
 	if(err::check==true){std::cout << "calculate_applied_fields has been called" << std::endl;}
 
+
+//    std::cout<<sim::time<<std::endl;
+//    std::cout<<sim::pulse_start_time<<std::endl;
+
+     sim::H_applied=0 ;// equlibration
+     if (sim::pulse_start_time!=0) //laser pulse  included
+     {
+         dtime=sim::time-sim::pulse_start_time;
+         double dt=dtime*dt_SI;
+
+         //the values of wait_time , dur_time, H_IEF  come from the input file written by myself
+         if (dt<wait_time)
+         {
+           sim::H_applied=0 ;
+         }
+         else if (dt>wait_time+dur_time)
+         {
+           sim::H_applied=0 ;
+         }
+         else
+         {
+           sim::H_applied=H_IFE ;
+         }
+       exit(1);
+     }
+
+
 	// Declare constant temporaries for global field
+    // we have to change this part for inverse faraday effect field, considering sim::time variable
 	const double Hx=sim::H_vec[0]*sim::H_applied;
 	const double Hy=sim::H_vec[1]*sim::H_applied;
 	const double Hz=sim::H_vec[2]*sim::H_applied;
+
 
 	// Declare array for local (material specific) applied field
 	std::vector<double> Hlocal(0);

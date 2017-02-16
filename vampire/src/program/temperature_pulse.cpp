@@ -262,7 +262,10 @@ void temperature_pulse(){
                     // Integrate system
                     sim::integrate(1);   // calculate spin dynamics
 
+
                 }
+//                std::cout<<"laser pulse start time "<<sim::pulse_start_time<<std::endl;
+//                std::cout<<"sim::time="<<sim::time<<std::endl;
 
                 // Calculate magnetisation statistics  //calculate
                 stats::mag_m();
