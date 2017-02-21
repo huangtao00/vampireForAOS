@@ -572,8 +572,11 @@ int calculate_applied_fields(const int start_index,const int end_index){
      sim::H_applied=0 ;// equlibration
      if (sim::pulse_start_time!=0) //laser pulse  included
      {
-         dtime=sim::time-sim::pulse_start_time;
-         double dt=dtime*dt_SI;
+         int   dtime=sim::time-sim::pulse_start_time;
+         double dt=dtime*mp::dt_SI;
+         double wait_time= 1.3e-13;
+         double dur_time =1.5e-12;
+         double H_IFE= 12;
 
          //the values of wait_time , dur_time, H_IEF  come from the input file written by myself
          if (dt<wait_time)
@@ -588,7 +591,6 @@ int calculate_applied_fields(const int start_index,const int end_index){
          {
            sim::H_applied=H_IFE ;
          }
-       exit(1);
      }
 
 
@@ -597,6 +599,10 @@ int calculate_applied_fields(const int start_index,const int end_index){
 	const double Hx=sim::H_vec[0]*sim::H_applied;
 	const double Hy=sim::H_vec[1]*sim::H_applied;
 	const double Hz=sim::H_vec[2]*sim::H_applied;
+//    std::cout<<"Hx="<<Hx<<std::endl;
+//    std::cout<<"Hy="<<Hy<<std::endl;
+//    std::cout<<"Hz="<<Hz<<std::endl;
+
 
 
 	// Declare array for local (material specific) applied field

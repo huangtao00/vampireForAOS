@@ -42,7 +42,7 @@ sim:integrator=llg-heun
 #external mangetic field  configuration
 sim:applied-field-strength= 0
 sim:applied-field-unit-vector=0,0.1,0.9  #almost z direction
-sim:integrator-random-seed=54321
+sim:integrator-random-seed=54333
 
 
 sim:program=laser-pulse       #使用激光脉冲加热材料
@@ -53,11 +53,11 @@ sim:two-temperature-electron-heat-capacity= 225
 sim:two-temperature-phonon-heat-capacity=   3.3E6  
 sim:two-temperature-electron-phonon-coupling= 18.0E17
 sim:laser-pulse-time=30.0E-14
-sim:laser-pulse-power=35E19  # 28E20  equal to IF I=7e18 ; F is fluence 400
+sim:laser-pulse-power=28E20  # 28E20  equal to IF I=7e18 ; F is fluence 400
 sim:equilibration-time-steps=1000  #2ps  the time spended for entering equilibration situation 
 #sim:loop-time-steps=10  # 
 sim:time-step=1.0E-16     #dt 
-sim:total-time-steps=30000 # 6ps
+sim:total-time-steps=30000 # 3ps  laser included
 sim:partial-time-steps=100 
 
 

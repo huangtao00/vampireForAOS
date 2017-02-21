@@ -1,39 +1,40 @@
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Logfile opened
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Opening main input file "input.FePt2nd".
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Parsing system parameters from main input file.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Opening material file "FePt2nd.mat".
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Parsing material file for parameters.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Setting scalar uniaxial anisotropy.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Reading in unit cell data...
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Logfile opened
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Opening main input file "input.FePt2nd".
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Parsing system parameters from main input file.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Opening material file "FePt2nd.mat".
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Parsing material file for parameters.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Setting scalar uniaxial anisotropy.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Reading in unit cell data...
 Done!
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Number of atoms read-in: 2
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Number of interactions read-in: 20
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Exchange type: 1
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Calculated interaction range: 1 Unit Cells
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Determining atomic composition
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Material 0 TM makes up 100% of all atoms.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Memory required for neighbourlist calculation:0.170368 MB
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Allocating memory for supercell array in neighbourlist calculation...
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Done
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Populating supercell array for neighbourlist calculation...
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Done
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Memory required for neighbour list:1.70368 MB
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Generating neighbour list...
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Done
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Deallocating supercell array for neighbour list calculation
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 	Done
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Copying system data to optimised data structures.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Number of atoms generated on rank 0: 16478
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Memory required for copying to performance array on rank 0: 2.50466 MB RAM
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Memory required for creation of 1D neighbour list on rank 0: 0.263648 MB RAM
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Unrolled exchange template requires 0.00048MB RAM
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Identifying surface atoms using global threshold value of 0.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] 0 surface atoms found.
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Macrocell size = 7 Angstroms
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Macrocells in x,y,z: 9	9	9
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Total number of macrocells: 729
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Memory required for macrocell arrays: 0.05832 MB
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Number of local macrocells on rank 0: 639
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Number of atoms generated: 16478
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Starting Simulation with Program Temperature-Pulse...
-2017-02-16 15:05:42 vampire [localhost.localdomain:4256:0] Outputting configuration file atoms-00000000.cfg to disk
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Number of atoms read-in: 2
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Number of interactions read-in: 20
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Exchange type: 1
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Calculated interaction range: 1 Unit Cells
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Determining atomic composition
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Material 0 TM makes up 100% of all atoms.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Memory required for neighbourlist calculation:0.170368 MB
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Allocating memory for supercell array in neighbourlist calculation...
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Done
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Populating supercell array for neighbourlist calculation...
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Done
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Memory required for neighbour list:1.70368 MB
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Generating neighbour list...
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Done
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Deallocating supercell array for neighbour list calculation
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 	Done
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Copying system data to optimised data structures.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Number of atoms generated on rank 0: 16478
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Memory required for copying to performance array on rank 0: 2.50466 MB RAM
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Memory required for creation of 1D neighbour list on rank 0: 0.263648 MB RAM
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Unrolled exchange template requires 0.00048MB RAM
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Identifying surface atoms using global threshold value of 0.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] 0 surface atoms found.
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Macrocell size = 7 Angstroms
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Macrocells in x,y,z: 9	9	9
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Total number of macrocells: 729
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Memory required for macrocell arrays: 0.05832 MB
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Number of local macrocells on rank 0: 639
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Number of atoms generated: 16478
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Starting Simulation with Program Temperature-Pulse...
+2017-02-16 16:36:38 vampire [localhost.localdomain:7570:0] Outputting configuration file atoms-00000000.cfg to disk
+2017-02-16 16:37:24 vampire [localhost.localdomain:7570:0] Simulation ended gracefully.

@@ -139,20 +139,23 @@ else
 {
  dtime=sim::time-sim::pulse_start_time;
  double dt=dtime*dt_SI;
- if (dt<wait_time)
- {
-    H==xxx
- }
- else if (dt>wait_time+dur_time)
- {
-   h==yyy
- }
- else
- {
-  H=const
- }
+	//the values of wait_time , dur_time, H_IEF  come from the input file written by myself
+	if (dt<wait_time)
+	{
+	sim::H_applied=0 ;
+	}
+	else if (dt>wait_time+dur_time)
+	{
+	sim::H_applied=0 ;
+	}
+	else
+	{
+	sim::H_applied=H_IFE ;
+	}
 
 }
+上面三个参数wait_time , dur_time, H_IEF 需要在input文件中指定，方便性考虑
+目前这个阶段，可以
 
 
 
