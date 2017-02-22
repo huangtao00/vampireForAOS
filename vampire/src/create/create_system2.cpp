@@ -360,7 +360,6 @@ int create(){
         double volumeIn=volume_SI*adjust_prefactor;
         std::cout<<"volumeIn="<<volumeIn<<std::endl;
 
-
         if(sim::UniaxialScalarAnisotropy==true){
             std::cout<<"adjust the volume factor"<<std::endl;
             for(int mat=0;mat<mp::num_materials; mat++)
