@@ -577,15 +577,19 @@ int calculate_applied_fields(const int start_index,const int end_index){
          double wait_time= 1.3e-13; // 0.13ps
          double dur_time =1.5e-12;  //1.5ps
          double H_IFE= -20;
-
          //the values of wait_time , dur_time, H_IEF  come from the input file written by myself
          if (dt<wait_time)
          {
-           sim::H_applied=0 ;
+             double tempT=(dt-wait_time)/sim::pump_time;
+             tempT=-tempT*tempT;
+             sim::H_applied=H_IFE*exp(tempT);
+
          }
          else if (dt>wait_time+dur_time)
          {
-           sim::H_applied=0 ;
+           double tempT=(dt-wait_time-dur_time)/sim::pump_time;
+           tempT=-tempT*tempT;
+           sim::H_applied=H_IFE*exp(tempT);
          }
          else
          {
