@@ -17,9 +17,13 @@ import matplotlib
 fontfile="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman_Italic.ttf"
 fontfile="/usr/share/fonts/msttcore/timesbi.ttf"
 zfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=20)
-plt.rc('text', usetex=True)
+
 #font for label
-lfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=20)
+lfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=40)
+labelsize=30
+ticksize=25
+plt.rc('text', usetex=True)
+
 def fit_curieT(x):
 	"""
 	fit the M(t) figure
@@ -68,7 +72,7 @@ class gpt():
 		plt.subplots_adjust(right=0.75)
 		par1 = host.twinx()  #line 2
 		par2 = host.twinx()  #line 3
-		offset =60
+		offset =110
 		new_fixed_axis = par2.get_grid_helper().new_fixed_axis
 		par2.axis["right"] = new_fixed_axis(loc="right",axes=par2,offset=(offset, 0))
 		par2.axis["right"].toggle(all=True)
@@ -104,11 +108,11 @@ class gpt():
 				# ax.plot(xarray,yarray, linestyle=style,color=color,label=legend,marker=marker,linewidth=2,markersize=7)
 			
 			if count==1: #time verses opto-magnetic field
-				par1.set_xlabel(xlabels[count])
-				par1.set_ylabel(ylabels[count])
+				par1.set_xlabel(xlabels[count],fontproperties=lfont)
+				par1.set_ylabel(ylabels[count],fontproperties=lfont)
 				#print yarray
 				#par1.set_ylim(0, 4)
-				p2,= par1.plot(xarray,yarray,linestyle=style,color=color,label=legend,marker=marker,linewidth=0.5,markersize=7)
+				p2,= par1.plot(xarray,yarray,linestyle=style,color=color,label=legend,marker=marker,linewidth=0.3,markersize=7)
 
 			if count==2: #time verses magnetisatioln
 				par2.set_xlabel(xlabels[count])
@@ -117,12 +121,25 @@ class gpt():
 				#par2.set_ylim(1, 65)
 				p3,= par2.plot(xarray,yarray,linestyle=style,color=color,label=legend,marker=marker,linewidth=2,markersize=7)
 			count+=1
-		host.legend()
+		host.legend(prop=zfont)
 		host.axis["left"].label.set_color(p1.get_color())
-		par1.axis["right"].label.set_color(p2.get_color())
-		par2.axis["right"].label.set_color(p3.get_color())
-		self.plt=plt
+		host.axis["left"].label.set_fontsize(labelsize)
+		host.axis["left"].major_ticklabels.set_fontsize(ticksize)
 
+		host.axis["bottom"].label.set_fontsize(labelsize)
+		host.axis["bottom"].major_ticklabels.set_fontsize(ticksize)
+
+		#set lable color, labelsize and  tick size
+		par1.axis["right"].label.set_color(p2.get_color())
+		par1.axis["right"].label.set_fontsize(labelsize)
+		par1.axis["right"].major_ticklabels.set_fontsize(ticksize)
+
+		par2.axis["right"].label.set_color(p3.get_color())
+		par2.axis["right"].label.set_fontsize(labelsize)
+		par2.axis["right"].major_ticklabels.set_fontsize(ticksize)
+
+
+		self.plt=plt
 		# redliney=[0]*pnum
 		# redlinex=[0]*pnum
 		# ax.plot(xarray,redliney,linestyle=style,color="black",linewidth=4,markersize=15)
@@ -135,33 +152,6 @@ class gpt():
 		# 	xlabel_i.set_fontsize(30)
 		# for ylabel_i in ax.get_yticklabels(): 
 		# 	ylabel_i.set_fontsize(30)
-		#adjust the legedt together
-		legend = plt.legend(loc='upper right', shadow=True, fontsize='xxx-large',prop=zfont)
-		plt.legend(prop=zfont)
-		host.axis["left"].label.set_color(p1.get_color())
-		par1.axis["right"].label.set_color(p2.get_color())
-		par2.axis["right"].label.set_color(p3.get_color())
-
-		# set ticks and tick labels
-		#ax.set_xlim((0, 2*np.pi))
-		#ax.set_xticks(range(-10,10,2))
-		#ax.set_xticklabels(['0', '$\pi$','2$\pi$'])
-		#ax.set_ylim((0.2, -4.2))
-		#ax.set_yticks([-1, 0, 1])
-
-		# Only draw spine between the y-ticks
-		#ax.spines['left'].set_bounds(-1, 1)
-		# Hide the right and top spines
-		#ax.spines['right'].set_visible(False)
-		#ax.spines['top'].set_visible(False)
-		# Only show ticks on the left and bottom spines
-
-
-		#self.fitting_f(x,fit_curieT,ax)
-		#ax.yaxis.set_ticks_position('left')
-		#ax.xaxis.set_ticks_position('bottom')
-
-
 	def show(self):
 		self.plt.show()
 
@@ -200,8 +190,11 @@ class Datas():
 				continue
 			line=line.split("\t")
 			#print line
-			xd=line[dataxy[0]-1]
-			yd=line[dataxy[1]-1]
+			xd=float(line[dataxy[0]-1])/(10**-12)
+			if dataxy[1]==2:
+				yd=abs(float(line[dataxy[1]-1]))
+			else:
+				yd=line[dataxy[1]-1]				
 			xdata.append(xd)
 			ydata.append(yd)
 		self.alldatax.append(xdata)
@@ -230,8 +223,8 @@ if __name__=="__main__":
 		r'$\checkmark$']
 	color=["r",'g','b','y','g','r']
 
-	xlabels=[r"$Time(s)$",r"$Time(s)$",r"$Time(s)$"]
-	ylabels=[r"$Temperature(K)$",r"$Magnetisation(M/M_s)$",r"$Opto-magnetic Field(T)$"]
+	xlabels=[r"$Time(ps)$",r"$Time(ps)$",r"$Time(ps)$"]
+	ylabels=[r"$Temperature(K)$",r"$Magnetization(M/M_s)$",r"$Opto-magnetic\ Field(T)$"]
 	#	label=[r"$time(s)$",r"$opto-magnet field(Tesla)$"]
 	curve={}
 	filename="output"
@@ -242,7 +235,7 @@ if __name__=="__main__":
 	curve["color"]="r"
 	curve["marker"]=r'$\lambda$'
 	fnlist=[]
-	legend=["Temperature","Magnetisation","Opto-magnetic Field"]
+	legend=["Temperature","Magnetization","Opto-magnetic Field"]
 	if len(sys.argv)>1:
 		for i in sys.argv[1:]:
 			fnlist.append(str(i))
@@ -255,7 +248,7 @@ if __name__=="__main__":
 
 	# fnlist=["output.10kstep","output.new"]
 	
-	style=["-","-","--","-","-","-"]
+	style=["-","--","--","-","-","-"]
 	dataSelect=[[1,3],[1,6],[1,2]]
 	for i in range(0,len(fnlist)):
 		# print (i)

@@ -35,7 +35,11 @@
 enum pump_functions_t {square=0, two_temperature, double_pump_two_temperature, double_pump_square};
 
 namespace sim{
-
+    //add by Huang Tao at Tue Mar 14 16:40:37 CST 2017
+    extern double pulse_wait_time;
+    extern double pulse_Hief_dur_time;
+    extern double pulse_Hief_field;
+    //***********************************************//
 	extern std::ofstream mag_file;
 	extern uint64_t time;
 	extern uint64_t total_time;

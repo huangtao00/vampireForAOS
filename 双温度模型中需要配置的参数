@@ -157,9 +157,37 @@ else
 上面三个参数wait_time , dur_time, H_IEF 需要在input文件中指定，方便性考虑
 目前这个阶段，可以
 
+//parameters for suitable laser pulse for AOS
+
+         double wait_time= 7.8e-13; // 0.13ps
+         double dur_time =9.4e-13;  //1.5ps 2ps
+         double H_IFE= -4;
+
+//
 
 
+laser fluence:56E20 /7e18   80  strong   4 Tesla
+laser fluence:28E20 /7e18   40  suitable 4 Tesla
+laser fluence:14e20 /7e16   20  suitable 3 Tesla
 
+laser fluence:7e20 /7e16   10  weak 2 Teslas
 
+//××××××××××××××××××××××××××××××××//
+Tue Mar 14 16:20:08 CST 2017
+考虑后面需要对以下三个参数进行修改后得到结果，需要在input文件中对这三个值进行配置，而不是在fields.cpp文件中改源码，然后重新编译再运行，
+需要对加入三个全局变量：
+         double wait_time= 7.8e-13; // 0.13ps
+         double dur_time =9.4e-13;  //1.5ps 2ps
+         double H_IFE= -4;
+
+//以上三个全局变量的名字如下：
+double sim::pulse_wait_time
+double sim::pulse_Hief_dur_time
+double sim::pulse_Hief_field
+
+//input解释文字部分，需要添加三个可解析的关键字
+为vampire添加新功能的几个步骤：
+1：需要哪些新的全局变量 （一般是可在input文件中配置的变量，为这些全局变量取好名（见名知意最好），然后将这些全局变量声明放到sim.hpp中,定义放到sim.cpp文件中
+2：
 
 

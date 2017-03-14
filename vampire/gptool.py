@@ -9,13 +9,15 @@ import matplotlib.pyplot as plt
 import math
 import matplotlib
 
-#set font size and style belonging to  legned , check out line 84
-fontfile="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman_Italic.ttf"
 fontfile="/usr/share/fonts/msttcore/timesbi.ttf"
-zfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=24)
-plt.rc('text', usetex=True)
+
+zfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=22)
+
 #font for label
-lfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=30)
+lfont = matplotlib.font_manager.FontProperties(fname=fontfile,size=40)
+labelsize=30
+ticksize=25
+plt.rc('text', usetex=True)
 def fit_curieT(x):
 	"""
 	fit the M(t) figure
@@ -76,8 +78,10 @@ class gpt():
 			color=allfile[cid]["color"]
 			legend=allfile[cid]["legend"]
 			marker=allfile[cid]["marker"]
+			xarray=xarray[:-100]
+			yarray=yarray[:-100]
 
-			ax.plot(xarray,yarray, linestyle=style,color=color,label=legend,marker=marker,linewidth=4,markersize=15)
+			ax.plot(xarray,yarray, linestyle=style,color=color,label=legend,marker=marker,linewidth=1,markersize=6)
 		# redliney=[0]*pnum
 		# redlinex=[0]*pnum
 		# ax.plot(xarray,redliney,linestyle=style,color="black",linewidth=4,markersize=15)
@@ -98,7 +102,10 @@ class gpt():
 		#ax.set_xticks(range(-10,10,2))
 		#ax.set_xticklabels(['0', '$\pi$','2$\pi$'])
 		#ax.set_ylim((0.2, -4.2))
-		#ax.set_yticks([-1, 0, 1])
+		ytick=range(500,3000,500)
+		ytick.append(300)
+		ytick.append(650)
+		ax.set_yticks(ytick)
 
 		# Only draw spine between the y-ticks
 		#ax.spines['left'].set_bounds(-1, 1)
@@ -150,7 +157,7 @@ class Datas():
 				continue
 			line=line.split("\t")
 			#print line
-			xd=line[dataxy[0]-1]
+			xd=float(line[dataxy[0]-1])/(10**-12)
 			yd=line[dataxy[1]-1]
 			xdata.append(xd)
 			ydata.append(yd)
@@ -172,14 +179,16 @@ if __name__=="__main__":
 		r'o',
 		r'^',
 		r'8',
+				r'$\bowtie$',
+		r'v',
 		r'$\lambda$',
-		r'$\bowtie$',
+
 		r'$\circlearrowleft$',
 		r'$\clubsuit$',
 		r'$\checkmark$']
-	color=["r",'g','b','y','g','r']
+	color=["r",'g','b','#444444','g','r']
 
-	label=[r"$time(s)$",r"$opto-magnet field(Tesla)$"]
+	label=[r"$Time(ps)$",r"$Temperature(K)$"]
 	curve={}
 	filename="output"
 	curve["filename"]=filename
@@ -188,8 +197,8 @@ if __name__=="__main__":
 	curve["style"]=""
 	curve["color"]="r"
 	curve["marker"]=r'$\lambda$'
-	fnlist=[]
-	legend=[]
+	fnlist=["output.strong","output.suitable","output.suitable3Tesla","output.weak2Tesla"]
+	legend=[r"$80\ mJ/cm^2$",r"$40\ mJ/cm^2$", r"$20\ mJ/cm^2$", r"$10\ mJ/cm^2$"]
 	if len(sys.argv)>1:
 		for i in sys.argv[1:]:
 			fnlist.append(str(i))
@@ -202,7 +211,7 @@ if __name__=="__main__":
 
 	# fnlist=["output.10kstep","output.new"]
 	
-	style=["-","-","-","-","-","-"]
+	style=["--","--","--","--","-","-"]
 	for i in range(0,len(fnlist)):
 		#4 6 8 10
 		#0 1 2 3

@@ -56,6 +56,12 @@
 #include <iostream>
 
 namespace sim{
+
+   double pulse_wait_time;
+   double pulse_Hief_dur_time;
+   double pulse_Hief_field;
+
+
 	std::ofstream mag_file;
 	uint64_t time=0;
 	uint64_t total_time=10000;

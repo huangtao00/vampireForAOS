@@ -42,7 +42,7 @@ sim:integrator=llg-heun
 #external mangetic field  configuration
 sim:applied-field-strength= 0
 sim:applied-field-unit-vector=0,0,1  #almost z direction
-sim:integrator-random-seed=54333
+sim:integrator-random-seed=50000
 
 
 sim:program=laser-pulse       #使用激光脉冲加热材料
