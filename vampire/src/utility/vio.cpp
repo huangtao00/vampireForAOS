@@ -1748,6 +1748,28 @@ int match_sim(string const word, string const value, string const unit, int cons
       sim::pump_time=pt;
       return EXIT_SUCCESS;
    }
+   //add by Huangtao
+   test="pulse_wait_time";
+   if(word==test){
+      double pwt=atof(value.c_str());
+      check_for_valid_value(pwt, word, line, prefix, unit, "time", 1.0e-18, 1.0,"input","1 attosecond - 1 s");
+      sim::pulse_wait_time=pwt;
+      return EXIT_SUCCESS;
+   }
+   test="pulse_Hief_dur_time";
+   if(word==test){
+      double pHdt=atof(value.c_str());
+      check_for_valid_value(pHdt, word, line, prefix, unit, "time", 1.0e-18, 1.0,"input","1 attosecond - 1 s");
+      sim::pulse_Hief_dur_time=pHdt;
+      return EXIT_SUCCESS;
+   }
+   test="pulse_Hief_field";
+   if(word==test){
+      double pHf=atof(value.c_str());
+      check_for_valid_value(pHf, word, line, prefix, unit, "time", 1.0e-18, 1.0,"input","1 attosecond - 1 s");
+      sim::pulse_Hief_field=pHf;
+      return EXIT_SUCCESS;
+   }
    //--------------------------------------------------------------------
    test="laser-pulse-power";
    if(word==test){

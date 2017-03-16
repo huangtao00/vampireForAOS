@@ -187,7 +187,18 @@ double sim::pulse_Hief_field
 
 //input解释文字部分，需要添加三个可解析的关键字
 为vampire添加新功能的几个步骤：
-1：需要哪些新的全局变量 （一般是可在input文件中配置的变量，为这些全局变量取好名（见名知意最好），然后将这些全局变量声明放到sim.hpp中,定义放到sim.cpp文件中
-2：
+1：需要哪些新的全局变量 （一般是可在input文件中配置的变量，为这些全局变量取好名（见名知意最好），
+然后将这些全局变量声明放到sim.hpp中,定义放到sim.cpp文件中
+2：添加input关键字解析部分，这一部分还是比较复杂的，（需要理清楚一下）
+vio.cpp line 290 to 298 有很多match函数，我们需要把这三个double变量赋值解析的情况 放到match_sim函数中
+int match_sim(...)在vio.cpp文件中1400行
+这把这三个变量的解析加到vio.cpp 1750行
+input文件中内容如下：
+	sim:pulse_wait_time=7.8E-13
+	sim:pulse_Hief_dur_time=9.4E-13
+	sim:pulse_Hief_field=-4
+
+
+
 
 
