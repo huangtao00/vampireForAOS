@@ -60,7 +60,10 @@ sim:time-step=1.0E-16     #dt
 sim:total-time-steps=40000 # 3ps  laser included
 sim:partial-time-steps=100 
 
-
+#inverse faraday effect config
+sim:pulse_wait_time=7.8E-13
+sim:pulse_Hief_dur_time=9.4E-13
+sim:pulse_Hief_field=-2
 #------------------------------------------
 #Data output 
 #------------------------------------------

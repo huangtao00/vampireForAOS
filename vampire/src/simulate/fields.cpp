@@ -574,9 +574,9 @@ int calculate_applied_fields(const int start_index,const int end_index){
      {
          int   dtime=sim::time-sim::pulse_start_time;
          double dt=dtime*mp::dt_SI;
-         double wait_time= 7.8e-13; // 0.13ps
-         double dur_time =4.4e-13;  //1.5ps 2ps
-         double H_IFE= -4;
+         double wait_time= sim::pulse_wait_time; // 0.13ps
+         double dur_time =sim::pulse_Hief_dur_time;  //1.5ps 2ps
+         double H_IFE= sim::pulse_Hief_field;
          //the values of wait_time , dur_time, H_IEF  come from the input file written by myself
          if (dt<wait_time)
          {

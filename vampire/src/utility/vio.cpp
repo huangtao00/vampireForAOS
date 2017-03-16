@@ -1766,7 +1766,7 @@ int match_sim(string const word, string const value, string const unit, int cons
    test="pulse_Hief_field";
    if(word==test){
       double pHf=atof(value.c_str());
-      check_for_valid_value(pHf, word, line, prefix, unit, "time", 1.0e-18, 1.0,"input","1 attosecond - 1 s");
+      check_for_valid_value(pHf, word, line, prefix, unit, "field", -1.e4, 1.0e4,"input","+/- 10,000 T");
       sim::pulse_Hief_field=pHf;
       return EXIT_SUCCESS;
    }
